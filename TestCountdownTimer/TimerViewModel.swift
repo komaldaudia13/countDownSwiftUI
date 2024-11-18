@@ -42,6 +42,7 @@ class TimerViewModel: ObservableObject {
         isRunning = false
         updateDisplay()
         progress = 1.0
+        startTime = nil
     }
     
     private func startTimer() {
@@ -59,6 +60,7 @@ class TimerViewModel: ObservableObject {
         timer = nil
         remainingTime -= currentDate().timeIntervalSince(startTime ?? currentDate())
         isRunning = false
+        startTime = nil
     }
     
     private func updateTimer() {
